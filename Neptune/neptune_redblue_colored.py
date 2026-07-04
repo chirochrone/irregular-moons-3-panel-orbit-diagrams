@@ -79,7 +79,7 @@ def color_filter(ID):
         if ID <= 808:
             return "magenta"
         if (ID == 811) or (ID == 812) or (ID == 85051):  # blue progrades
-            return "#64a8ff"
+            return "#4fc4ff"
         else:
             return "#ff6464"
 
