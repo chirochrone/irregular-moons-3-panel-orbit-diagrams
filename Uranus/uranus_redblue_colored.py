@@ -1,5 +1,3 @@
-# WARNING!!! FADING ORBITS CAUSE IMMENSE LAG!!!
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
@@ -29,7 +27,7 @@ ORBITAL_PERIODS = {
     720: 677,
     721: 749,
     722: 267,
-    723: 1655,
+    723: 1655,  # Margaret
     724: 2788,
     # Provisional irregular
     75051: 681,
@@ -83,9 +81,10 @@ def color_filter(ID):
         # Regular moons are magenta
         if ID <= 705:
             return "magenta"
-        # Moon 722 is red
+        # Prograde moon (Margaret) is blue
         if ID == 723:
-            return "#64a8ff"
+            return "#4fc4ff"
+        # retrograde moons are red
         else:
             return "#ff6464"
 
@@ -93,9 +92,10 @@ def color_filter(ID):
         # Regular moons are magenta
         if ID <= 705:
             return "magenta"
-        # Moon 722 is red
+        # Prograde moon (Margaret) is blue
         if ID == 723:
             return "blue"
+        # retrograde moons are red
         else:
             return "red"
 
@@ -104,9 +104,6 @@ def opacity_filter(ID):
         # Regular moons
         if ID <= 705:
             return 1.0
-        # Moon 722
-        if ID == 722:
-            return 1.0
         else:
             return 1.0
         
@@ -114,8 +111,8 @@ def opacity_filter(ID):
         # Regular moons
         if ID <= 705:
             return 0.5
-        # Moon 722
-        if ID == 722:
+        # Prograde moon (Margaret)
+        if ID == 723:
             return 1.0
         else:
             return 0.75
